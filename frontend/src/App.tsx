@@ -12,6 +12,7 @@ import Inventory from './pages/Inventory';
 import Suppliers from './pages/Suppliers';
 import Expenses from './pages/Expenses';
 import Accounting from './pages/Accounting';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 const I = {
   home: (
@@ -145,6 +146,7 @@ export default function App() {
         <header className="h-14 bg-white border-b border-gray-200 flex items-center justify-between px-6">
           <div className="text-sm text-gray-500">Knoxia POS</div>
           <div className="flex items-center gap-3">
+            <LanguageSwitcher />
             <button className="text-sm text-[#569DE6] hover:underline font-semibold">Help</button>
             <div className="w-8 h-8 rounded-full bg-[#569DE6] text-white grid place-items-center text-xs font-bold">A</div>
           </div>
