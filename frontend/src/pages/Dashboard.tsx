@@ -11,9 +11,9 @@ export default function Dashboard() {
   const [sales, setSales] = useState<Sale[]>([]);
 
   useEffect(() => {
-    chairApi.list().then(setChairs);
-    barberApi.list().then(setBarbers);
-    saleApi.today().then(setSales).catch(() => setSales([]));
+    chairApi.list().then(d => setChairs(Array.isArray(d) ? d : [])).catch(() => setChairs([]));
+    barberApi.list().then(d => setBarbers(Array.isArray(d) ? d : [])).catch(() => setBarbers([]));
+    saleApi.today().then(d => setSales(Array.isArray(d) ? d : [])).catch(() => setSales([]));
   }, []);
 
   const empty = chairs.filter(c => c.status === 'EMPTY').length;
